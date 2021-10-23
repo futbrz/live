@@ -73,11 +73,10 @@
 				var video = document.getElementById('video');
 				video.volume = 1.0;
 				var hls = new Hls();
-				var m3u8Url = decodeURIComponent(atob(url))
-				hls.loadSource(m3u8Url);
+				hls.loadSource(decodeURIComponent(atob(url)));
 				hls.attachMedia(video);
 				hls.on(Hls.Events.MANIFEST_PARSED,function() {
-				video.play();
+					video.play();
 				});
 				var scrollingElement = (document.scrollingElement || document.body);
 				scrollingElement.scrollTop = scrollingElement.scrollHeight;
